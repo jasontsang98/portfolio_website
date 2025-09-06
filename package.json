@@ -4,6 +4,7 @@
     "@tailwindcss/typography": "^0.5.10"
   },
   "scripts": {
-    "build-css": "tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --watch"
+    "build-css": "tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --watch",
+    "vercel-build": "tailwindcss -i ./static/css/input.css -o ./static/css/styles.css --minify"
   }
 }
