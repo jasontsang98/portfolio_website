@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+        <div class="mb-6">
+            <!-- Profile Image Row -->
+            <div class="flex justify-center mb-6">
+                <img src="{{ url_for('static', filename='files/profile.png') }}" 
+                     alt="{{ personal.name }}" 
+                     class="rounded-full border-4 border-dev-accent object-cover object-center shadow-lg"
+                     style="width: 12rem; height: 12rem; min-width: 12rem; min-height: 12rem; max-width: 15rem; max-height: 15rem;"
+                     loading="lazy">
+            </div>
+            
+            <!-- Name Row -->
+            <div class="text-center mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold">{{ personal.name }}</h1>
+            </div>
+            
+            <!-- Title Row -->
+            <div class="text-center">
+                <h2 class="text-2xl text-white">{{ personal.title }}</h2>
+            </div>
+        </div>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">{{ personal.tagline }}</p>
+    </div>
+    
+    <!-- Skills Section -->
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold mb-8 text-center">Technical Skills</h3>
+        
+        <!-- Programming Languages -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Programming Languages</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for skill in skills.languages %}
+                <div class="bg-dev-gray p-4 rounded-lg">
+                    <div class="text-2xl mb-2">
+                        {% if skill.icon.startswith('fa') %}
+                        <i class="{{ skill.icon }}"></i>
+                        {% else %}
+                        {{ skill.icon }}
+                        {% endif %}
+                    </div>
+                    <h5 class="font-semibold">{{ skill.name }}</h5>
+                    <p class="text-gray-400">{{ skill.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Database -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Database</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for skill in skills.database %}
+                <div class="bg-dev-gray p-4 rounded-lg">
+                    <div class="text-2xl mb-2">
+                        {% if skill.icon.startswith('fa') %}
+                        <i class="{{ skill.icon }}"></i>
+                        {% else %}
+                        {{ skill.icon }}
+                        {% endif %}
+                    </div>
+                    <h5 class="font-semibold">{{ skill.name }}</h5>
+                    <p class="text-gray-400">{{ skill.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Tools and Technologies -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Tools and Technologies</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for skill in skills.tools %}
+                <div class="bg-dev-gray p-4 rounded-lg">
+                    <div class="text-2xl mb-2">
+                        {% if skill.icon.startswith('fa') %}
+                        <i class="{{ skill.icon }}"></i>
+                        {% else %}
+                        {{ skill.icon }}
+                        {% endif %}
+                    </div>
+                    <h5 class="font-semibold">{{ skill.name }}</h5>
+                    <p class="text-gray-400">{{ skill.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Systems -->
+        <div class="mb-8">
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Systems</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for skill in skills.systems %}
+                <div class="bg-dev-gray p-4 rounded-lg">
+                    <div class="text-2xl mb-2">
+                        {% if skill.icon.startswith('fa') %}
+                        <i class="{{ skill.icon }}"></i>
+                        {% else %}
+                        {{ skill.icon }}
+                        {% endif %}
+                    </div>
+                    <h5 class="font-semibold">{{ skill.name }}</h5>
+                    <p class="text-gray-400">{{ skill.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Data Visualisation -->
+        <div>
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Data Visualisation</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {% for skill in skills.visualization %}
+                <div class="bg-dev-gray p-4 rounded-lg">
+                    <div class="text-2xl mb-2">
+                        {% if skill.icon.startswith('fa') %}
+                        <i class="{{ skill.icon }}"></i>
+                        {% else %}
+                        {{ skill.icon }}
+                        {% endif %}
+                    </div>
+                    <h5 class="font-semibold">{{ skill.name }}</h5>
+                    <p class="text-gray-400">{{ skill.level }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- In Progress Skills Section -->
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold mb-8 text-center">Currently Learning</h3>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% for skill in skills.in_progress %}
+                <div class="bg-dev-gray p-6 rounded-lg mb-4">
+                    <div class="flex items-center mb-4">
+                        <div class="text-xl mr-6">
+                            {% if skill.icon.startswith('fa') %}
+                            <i class="{{ skill.icon }}"></i>
+                            {% else %}
+                            {{ skill.icon }}
+                            {% endif %}
+                        </div>
+                        <h4 class="text-lg font-semibold">{{ skill.name }}</h4>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <style>
+                        .progress-container {
+                            width: 100%;
+                            height: 20px;
+                            background-color: #333333;
+                            border: 2px solid #ffffff;
+                            border-radius: 10px;
+                            overflow: hidden;
+                        }
+                        .progress-bar {
+                            height: 100%;
+                            width: 50%;
+                            background-color: #58a6ff;
+                            border-radius: 8px;
+                        }
+                    </style>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="text-center">
+        <h3 class="text-3xl font-bold mb-8">Get In Touch</h3>
+        <div class="flex justify-center space-x-6">
+            <a href="mailto:{{ personal.email }}" class="bg-dev-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                <i class="fas fa-envelope mr-2"></i>Email Me
+            </a>
+            <a href="{{ personal.github }}" target="_blank" class="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors">
+                <i class="fab fa-github mr-2"></i>GitHub
+            </a>
+            <a href="{{ personal.linkedin }}" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

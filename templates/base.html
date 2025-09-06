@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ personal.name }} - {{ personal.title }}{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-dev-dark text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-dev-gray shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-dev-accent">{{ personal.name }}</div>
+                <div class="space-x-6">
+                    <a href="{{ url_for('intro') }}" class="hover:text-dev-accent transition-colors">Intro</a>
+                    <a href="{{ url_for('resume') }}" class="hover:text-dev-accent transition-colors">Resume</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="flex-1">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-dev-gray mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2024 {{ personal.name }}. Built with Flask and Tailwind CSS.</p>
+        </div>
+    </footer>
+</body>
+</html>

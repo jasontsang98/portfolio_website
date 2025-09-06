@@ -1,0 +1,109 @@
+personal:
+  name: "Jason Tsang"
+  title: "Data Analyst"
+  tagline: "Building solutions with clean code and innovative thinking"
+  email: "jasontwk1031@gmail.com"
+  github: "https://github.com/jasontsang98"
+  linkedin: "https://linkedin.com/in/jasontsang123"
+  location: "Sydney, Australia"
+  career_objective: "Passionate Data Analyst with expertise in Python and SQL, seeking to leverage analytical skills 
+    and technical proficiency to drive data-driven decision making. Committed to transforming complex datasets into actionable insights that contribute to organizational growth and operational efficiency."
+skills:
+  languages:
+    - name: "Python"
+      level: "Advanced"
+      icon: "fab fa-python"
+    - name: "JavaScript"
+      level: "Intermediate"
+      icon: "fab fa-js-square"
+    - name: "R"
+      level: "Intermediate"
+      icon: "fab fa-r-project"
+
+  database:
+    - name: "SQL"
+      level: "Advanced"
+      icon: "fas fa-database"
+    - name: "PostgreSQL"
+      level: "Advanced"
+      icon: "🐘"
+    - name: "MySQL"
+      level: "Intermediate"
+      icon: "🗄️"
+
+  tools:
+    - name: "Git"
+      level: "Advanced"
+      icon: "fab fa-git-alt"
+    - name: "Docker"
+      level: "Intermediate"
+      icon: "fab fa-docker"
+    - name: "VS Code"
+      level: "Advanced"
+      icon: "fas fa-code"
+
+  systems:
+    - name: "Linux"
+      level: "Intermediate"
+      icon: "fab fa-linux"
+    - name: "Windows"
+      level: "Advanced"
+      icon: "fab fa-windows"
+    - name: "macOS"
+      level: "Intermediate"
+      icon: "fab fa-apple"
+    - name: "Ubuntu"
+      level: "Intermediate"
+      icon: "fab fa-ubuntu"
+
+  visualization:
+    - name: "Matplotlib"
+      level: "Advanced"
+      icon: "📊"
+    - name: "Seaborn"
+      level: "Advanced"
+      icon: "📈"
+    - name: "Plotly"
+      level: "Intermediate"
+      icon: "📉"
+    - name: "Tableau"
+      level: "Intermediate"
+      icon: "📋"
+
+  in_progress:
+    - name: "Machine Learning"
+      icon: "🤖"
+    - name: "AWS Cloud"
+      icon: "fab fa-aws"
+    - name: "TypeScript"
+      icon: "fab fa-js-square"
+    - name: "Kubernetes"
+      icon: "fas fa-dharmachakra"
+    - name: "GraphQL"
+      icon: "📊"
+
+experience:
+  - title: "Software Developer"
+    company: "Company Name"
+    duration: "2022 - Present"
+    location: "City, Country"
+    description:
+      - "1"
+      - "2"
+    technologies: ["Python", "Flask", "PostgreSQL"]
+
+projects:
+  - name: "Portfolio Website"
+    description: "A responsive Flask-based portfolio website with Tailwind CSS, featuring dynamic content management via YAML configuration and deployment on Vercel."
+    technologies: ["Python", "Flask", "Tailwind CSS", "HTML", "JavaScript"]
+    github_url: "https://github.com/jasontsang98/portfolio-website"
+
+education:
+  - degree: "Your Degree"
+    institution: "University Name"
+    graduation: "Year"
+    gpa: "X.X/4.0"
+  - degree: "Your Degree 2"
+    institution: "University Name"
+    graduation: "Year"
+    gpa: "X.X/4.0"
