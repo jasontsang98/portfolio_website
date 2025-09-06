@@ -18,6 +18,11 @@ def resume():
     config = load_config()
     return render_template('resume.html', **config)
 
+@app.route('/blog')
+def blog():
+    config = load_config()
+    return render_template('blog.html', **config)
+
 @app.route('/download-resume')
 def download_resume():
     return send_file('static/files/resume.pdf', as_attachment=True)

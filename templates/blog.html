@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-8 md:px-16 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+        <div class="mb-6">
+            <!-- Profile Image Row -->
+            <div class="flex justify-center mb-6">
+                <img src="{{ url_for('static', filename='files/profile.png') }}" 
+                     alt="{{ personal.name }}" 
+                     class="rounded-full border-4 border-dev-accent object-cover object-center shadow-lg"
+                     style="width: 12rem; height: 12rem; min-width: 12rem; min-height: 12rem; max-width: 15rem; max-height: 15rem;"
+                     loading="lazy">
+            </div>
+            
+            <!-- Name Row -->
+            <div class="text-center mb-4">
+                <h1 class="text-5xl md:text-6xl font-bold">{{ personal.name }}</h1>
+            </div>
+            
+            <!-- Title Row -->
+            <div class="text-center">
+                <h2 class="text-3xl text-white">{{ personal.title }}</h2>
+            </div>
+        </div>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">{{ personal.tagline }}</p>
+        
+        <!-- Contact Links -->
+        <div class="flex justify-center space-x-6">
+            <a href="mailto:{{ personal.email }}" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="{{ personal.github }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ personal.linkedin }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="mb-12">
+        <div class="flex justify-center space-x-8">
+            <a href="{{ url_for('intro') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'intro' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                About
+            </a>
+            <a href="{{ url_for('resume') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'resume' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                Experience
+            </a>
+            <a href="{{ url_for('blog') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'blog' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                Blog
+            </a>
+        </div>
+    </nav>
+
+    <!-- Blog Content -->
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-dev-gray p-16 rounded-lg text-center">
+            <div class="text-8xl mb-6 text-yellow-500">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <h3 class="text-4xl font-bold mb-4 text-yellow-400">Work in Progress</h3>
+            <p class="text-gray-300 text-xl mb-6">
+                🚧 Blog section is currently under construction 🚧
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

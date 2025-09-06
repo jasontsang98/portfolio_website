@@ -1,109 +1,111 @@
 personal:
   name: "Jason Tsang"
-  title: "Data Analyst"
-  tagline: "Building solutions with clean code and innovative thinking"
+  title: "Analyst | Developer"
+  tagline: "Building solutions innovative thinking"
   email: "jasontwk1031@gmail.com"
   github: "https://github.com/jasontsang98"
   linkedin: "https://linkedin.com/in/jasontsang123"
-  location: "Sydney, Australia"
-  career_objective: "Passionate Data Analyst with expertise in Python and SQL, seeking to leverage analytical skills 
-    and technical proficiency to drive data-driven decision making. Committed to transforming complex datasets into actionable insights that contribute to organizational growth and operational efficiency."
+  career_objective: "Aspiring data engineer with hands-on experience in data analytics and engineering tools. 
+    Eager to transition into a data engineering role, leveraging expertise in data modeling, ETL pipelines, 
+    and big data technologies to support business analytics and decisionmaking. 
+    Enthusiastic about creating scalable and efficient data infrastructure to enable data-driven insights"
 skills:
-  languages:
+  programming_data:
     - name: "Python"
       level: "Advanced"
       icon: "fab fa-python"
-    - name: "JavaScript"
-      level: "Intermediate"
-      icon: "fab fa-js-square"
-    - name: "R"
-      level: "Intermediate"
-      icon: "fab fa-r-project"
-
-  database:
     - name: "SQL"
       level: "Advanced"
       icon: "fas fa-database"
-    - name: "PostgreSQL"
-      level: "Advanced"
-      icon: "🐘"
-    - name: "MySQL"
+    - name: "PySpark"
       level: "Intermediate"
-      icon: "🗄️"
+      icon: "fas fa-fire"
+    - name: "Databricks"
+      level: "Intermediate"
+      icon: "fas fa-stream"
 
-  tools:
+  data_engineering:
+    - name: "Airflow"
+      level: "Intermediate"
+      icon: "fas fa-project-diagram"
+    - name: "dbt"
+      level: "Intermediate"
+      icon: "fas fa-cubes"
+    - name: "Alteryx"
+      level: "Advanced"
+      icon: "fas fa-random"
+
+  devops:
+    - name: "Azure DevOps"
+      level: "Advanced"
+      icon: "fab fa-microsoft"
     - name: "Git"
       level: "Advanced"
       icon: "fab fa-git-alt"
     - name: "Docker"
       level: "Intermediate"
       icon: "fab fa-docker"
-    - name: "VS Code"
-      level: "Advanced"
-      icon: "fas fa-code"
 
   systems:
     - name: "Linux"
       level: "Intermediate"
       icon: "fab fa-linux"
     - name: "Windows"
-      level: "Advanced"
+      level: "Intermediate"
       icon: "fab fa-windows"
-    - name: "macOS"
-      level: "Intermediate"
-      icon: "fab fa-apple"
-    - name: "Ubuntu"
-      level: "Intermediate"
-      icon: "fab fa-ubuntu"
 
   visualization:
-    - name: "Matplotlib"
+    - name: "Power BI"
       level: "Advanced"
-      icon: "📊"
-    - name: "Seaborn"
-      level: "Advanced"
-      icon: "📈"
-    - name: "Plotly"
-      level: "Intermediate"
-      icon: "📉"
+      icon: "fas fa-chart-bar"
     - name: "Tableau"
-      level: "Intermediate"
-      icon: "📋"
+      level: "Advanced"
+      icon: "fas fa-chart-pie"
+    - name: "Qlik"
+      level: "Advanced"
+      icon: "fas fa-chart-line"
 
   in_progress:
+    - name: "Airbyte"
+      icon: "fas fa-exchange-alt"
+      level: 1
+    - name: "Azure Cloud"
+      icon: "fas fa-cloud"
+      level: 2
+    - name: "Snowflake"
+      icon: "fas fa-snowflake"
+      level: 1
     - name: "Machine Learning"
-      icon: "🤖"
-    - name: "AWS Cloud"
-      icon: "fab fa-aws"
-    - name: "TypeScript"
-      icon: "fab fa-js-square"
-    - name: "Kubernetes"
-      icon: "fas fa-dharmachakra"
-    - name: "GraphQL"
-      icon: "📊"
+      icon: "fas fa-robot"
+      level: 0
 
 experience:
-  - title: "Software Developer"
-    company: "Company Name"
-    duration: "2022 - Present"
-    location: "City, Country"
+  - title: "Senior Consultant, Data Analytics"
+    company: "PwC Australia"
+    duration: "July 2025 - Present"
+    location: "Sydney, Australia"
     description:
       - "1"
       - "2"
-    technologies: ["Python", "Flask", "PostgreSQL"]
+    technologies: ["Python", "Transact-SQL", "Azure Pipeline", "Alteryx"]
+  - title: "Consultant, Data Analytics"
+    company: "PwC Australia"
+    duration: "December 2022 - June 2025"
+    location: "Sydney, Australia"
+    description:
+      - "1"
+      - "2"
 
 projects:
   - name: "Portfolio Website"
     description: "A responsive Flask-based portfolio website with Tailwind CSS, featuring dynamic content management via YAML configuration and deployment on Vercel."
     technologies: ["Python", "Flask", "Tailwind CSS", "HTML", "JavaScript"]
-    github_url: "https://github.com/jasontsang98/portfolio-website"
+    github_url: "https://github.com/jasontsang98/portfolio_website"
 
 education:
-  - degree: "Your Degree"
-    institution: "University Name"
-    graduation: "Year"
-    gpa: "X.X/4.0"
-  - degree: "Your Degree 2"
-    institution: "University Name"
-    graduation: "Year"
-    gpa: "X.X/4.0"
+  - degree: "Master of Commerce, Business Analytics"
+    institution: "University of Sydney"
+    graduation: "2020 - 2022"
+  - degree: "Bachelor of Actuarial Studies"
+    institution: "University of New South Wales"
+    graduation: "2017 - 2020"

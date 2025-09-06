@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 py-12">
+<div class="max-w-7xl mx-auto px-8 md:px-16 py-12">
     <!-- Hero Section -->
-    <div class="text-center mb-16">
+    <div class="text-center mb-12">
         <div class="mb-6">
             <!-- Profile Image Row -->
             <div class="flex justify-center mb-6">
@@ -16,26 +16,57 @@
             
             <!-- Name Row -->
             <div class="text-center mb-4">
-                <h1 class="text-4xl md:text-5xl font-bold">{{ personal.name }}</h1>
+                <h1 class="text-5xl md:text-6xl font-bold">{{ personal.name }}</h1>
             </div>
             
             <!-- Title Row -->
             <div class="text-center">
-                <h2 class="text-2xl text-white">{{ personal.title }}</h2>
+                <h2 class="text-3xl text-white">{{ personal.title }}</h2>
             </div>
         </div>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">{{ personal.tagline }}</p>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">{{ personal.tagline }}</p>
+        
+        <!-- Contact Links -->
+        <div class="flex justify-center space-x-6">
+            <a href="mailto:{{ personal.email }}" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="{{ personal.github }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ personal.linkedin }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
     </div>
+    
+    <!-- Navigation -->
+    <nav class="mb-12">
+        <div class="flex justify-center space-x-8">
+            <a href="{{ url_for('intro') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'intro' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                About
+            </a>
+            <a href="{{ url_for('resume') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'resume' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                Experience
+            </a>
+            <a href="{{ url_for('blog') }}" 
+               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'blog' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
+                Blog
+            </a>
+        </div>
+    </nav>
     
     <!-- Skills Section -->
     <div class="mb-16">
-        <h3 class="text-3xl font-bold mb-8 text-center">Technical Skills</h3>
+        <h3 class="text-3xl font-bold mb-8 text-center">Tech Stack</h3>
         
-        <!-- Programming Languages -->
+        <!-- Programming and Data -->
         <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Programming Languages</h4>
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Programming and Data</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.languages %}
+                {% for skill in skills.programming_data %}
                 <div class="bg-dev-gray p-4 rounded-lg">
                     <div class="text-2xl mb-2">
                         {% if skill.icon.startswith('fa') %}
@@ -51,11 +82,11 @@
             </div>
         </div>
         
-        <!-- Database -->
+        <!-- Data Engineering and Pipelines -->
         <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Database</h4>
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Data Engineering and Pipeline</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.database %}
+                {% for skill in skills.data_engineering %}
                 <div class="bg-dev-gray p-4 rounded-lg">
                     <div class="text-2xl mb-2">
                         {% if skill.icon.startswith('fa') %}
@@ -71,11 +102,11 @@
             </div>
         </div>
         
-        <!-- Tools and Technologies -->
+        <!-- DevOps and Collaboration -->
         <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Tools and Technologies</h4>
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">DevOps and Collaboration</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.tools %}
+                {% for skill in skills.devops %}
                 <div class="bg-dev-gray p-4 rounded-lg">
                     <div class="text-2xl mb-2">
                         {% if skill.icon.startswith('fa') %}
@@ -93,7 +124,7 @@
         
         <!-- Systems -->
         <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Systems</h4>
+            <h4 class="text-xl font-semibold mb-4 text-dev-accent">System</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {% for skill in skills.systems %}
                 <div class="bg-dev-gray p-4 rounded-lg">
@@ -134,7 +165,7 @@
     
     <!-- In Progress Skills Section -->
     <div class="mb-16">
-        <h3 class="text-3xl font-bold mb-8 text-center">Currently Learning</h3>
+        <h3 class="text-3xl font-bold mb-8 text-center">I'm Currently Developing</h3>
         <div class="max-w-4xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {% for skill in skills.in_progress %}
@@ -151,43 +182,11 @@
                     </div>
                     <!-- Progress Bar -->
                     <div class="progress-container">
-                        <div class="progress-bar"></div>
+                        <div class="progress-bar progress-level-{{ skill.level }}"></div>
                     </div>
-                    <style>
-                        .progress-container {
-                            width: 100%;
-                            height: 20px;
-                            background-color: #333333;
-                            border: 2px solid #ffffff;
-                            border-radius: 10px;
-                            overflow: hidden;
-                        }
-                        .progress-bar {
-                            height: 100%;
-                            width: 50%;
-                            background-color: #58a6ff;
-                            border-radius: 8px;
-                        }
-                    </style>
                 </div>
                 {% endfor %}
             </div>
-        </div>
-    </div>
-    
-    <!-- Contact Section -->
-    <div class="text-center">
-        <h3 class="text-3xl font-bold mb-8">Get In Touch</h3>
-        <div class="flex justify-center space-x-6">
-            <a href="mailto:{{ personal.email }}" class="bg-dev-accent text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                <i class="fas fa-envelope mr-2"></i>Email Me
-            </a>
-            <a href="{{ personal.github }}" target="_blank" class="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors">
-                <i class="fab fa-github mr-2"></i>GitHub
-            </a>
-            <a href="{{ personal.linkedin }}" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                <i class="fab fa-linkedin mr-2"></i>LinkedIn
-            </a>
         </div>
     </div>
 </div>
