@@ -19,6 +19,32 @@ impact:
   - value: "2+"
     label: "consultants mentored"
 
+tech_ticker:
+  - name: "Python"
+    icon: "fab fa-python"
+  - name: "SQL"
+    icon: "fas fa-database"
+  - name: "PySpark"
+    icon: "fas fa-fire"
+  - name: "dbt"
+    icon: "fas fa-cubes"
+  - name: "Azure"
+    icon: "fab fa-microsoft"
+  - name: "Databricks"
+    icon: "fas fa-layer-group"
+  - name: "Alteryx"
+    icon: "fas fa-diagram-project"
+  - name: "Airbyte"
+    icon: "fas fa-right-left"
+  - name: "Docker"
+    icon: "fab fa-docker"
+  - name: "Power BI"
+    icon: "fas fa-chart-column"
+  - name: "Tableau"
+    icon: "fas fa-chart-pie"
+  - name: "Qlik"
+    icon: "fas fa-chart-line"
+
 toolbox:
   - category: "Languages & frameworks"
     items: ["Python", "SQL", "PySpark", "dbt"]
