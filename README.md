@@ -58,6 +58,11 @@ A modern, responsive portfolio website built with Flask and Tailwind CSS, design
 6. **Visit your site**
    Open http://localhost:5000 in your browser
 
+For active CSS development, run the watcher in a separate terminal:
+```bash
+npm run build-css:watch
+```
+
 ## Updating Your Portfolio Content
 
 All content is managed through the `config/content.yaml` file. Here's how to update each section:
@@ -156,6 +161,19 @@ colors: {
 - Edit `templates/intro.html` for the homepage
 - Edit `templates/resume.html` for the resume page
 
+## Architecture
+
+The Flask application loads portfolio content from `config/content.yaml` and passes it to Jinja templates. `templates/base.html` provides the shared navigation and layout, while page templates extend it. Tailwind reads the templates and `static/css/input.css`, then writes the generated stylesheet to `static/css/styles.css`.
+
+### Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` and `/intro` | Portfolio introduction |
+| `/resume` | Resume and experience |
+| `/blog` | Blog page |
+| `/download-resume` | Download the resume PDF |
+
 ## Deployment
 
 ### Deploy to Vercel
@@ -213,9 +231,11 @@ portfolio_website/
 │   │   ├── input.css        # Tailwind input
 │   │   └── styles.css       # Generated CSS
 │   └── files/
-│       └── resume.pdf       # Your resume PDF
+│       ├── profile.png      # Profile image
+│       └── resume.pdf       # Resume PDF
 └── templates/
     ├── base.html            # Base template
+    ├── blog.html            # Blog page
     ├── intro.html           # Homepage
     └── resume.html          # Resume page
 ```
@@ -231,10 +251,6 @@ portfolio_website/
 
 ### Getting Help
 
-- Check the project documentation in `CLAUDE.md`
 - Review the detailed implementation plan in `project_plan.md`
 - Ensure all dependencies are installed correctly
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+- Confirm both Python and Node.js dependencies are installed

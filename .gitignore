@@ -1,3 +1,6 @@
+# Local AI coding-assistant settings
+.claude/
+
 # Python
 __pycache__/
 *.py[cod]
