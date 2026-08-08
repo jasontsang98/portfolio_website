@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink font-sans text-slate-100 antialiased; }
+  ::selection { @apply bg-cyan/30 text-white; }
+}
+
+@layer components {
+  .site-shell { @apply mx-auto w-full max-w-5xl px-5 sm:px-8; }
+  .eyebrow { @apply font-mono text-xs font-medium uppercase tracking-[0.22em] text-cyan; }
+  .surface { @apply rounded-2xl border border-line/80 bg-panel/80; }
+  .tag { @apply rounded-full border border-line bg-elevated px-3 py-1 font-mono text-[11px] text-slate-300; }
+  .nav-link { @apply text-sm text-slate-400 transition hover:text-white; }
+  .nav-link-active { @apply text-white; }
+  .button-primary { @apply inline-flex items-center justify-center rounded-full bg-slate-100 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-cyan; }
+  .button-secondary { @apply inline-flex items-center justify-center rounded-full border border-line px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-slate-500 hover:bg-elevated; }
+}
+
+.page-grid {
+  background-image: linear-gradient(rgba(148, 163, 184, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, .035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.tech-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: tech-marquee 38s linear infinite;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+.tech-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2.75rem;
+  padding-right: 2.75rem;
+}
+
+@keyframes tech-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .tech-marquee-track { animation-duration: 48s; }
+  .tech-marquee-group { gap: 2rem; padding-right: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+  .tech-marquee-track { animation: none; }
+  .tech-marquee-group[aria-hidden="true"] { display: none; }
+}

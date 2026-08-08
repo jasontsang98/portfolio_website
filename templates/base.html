@@ -3,43 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{personal.name}}{% endblock %}</title>
+    <meta name="description" content="Jason Tsang is a Senior Data Analytics Consultant building reliable data pipelines, analytics models, and decision-ready reporting.">
+    <title>{% block title %}{{ personal.name }} — {{ personal.title }}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .progress-container {
-            width: 100%;
-            height: 20px;
-            background-color: #333333;
-            border: 2px solid #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            background-color: #58a6ff;
-            border-radius: 8px;
-            transition: width 0.3s ease;
-            width: 0%;
-        }
-        .progress-level-0 { width: 0%; }
-        .progress-level-1 { width: 20%; }
-        .progress-level-2 { width: 40%; }
-        .progress-level-3 { width: 60%; }
-        .progress-level-4 { width: 80%; }
-        .progress-level-5 { width: 100%; }
-    </style>
 </head>
-<body class="bg-dev-dark text-white min-h-screen">
-    <!-- Main Content -->
-    <main class="flex-1">
-        {% block content %}{% endblock %}
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-dev-gray mt-12 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center text-gray-400">
-            <p>&copy; 2024 {{ personal.name }}. Built with Flask and Tailwind CSS.</p>
+<body class="min-h-screen overflow-x-hidden">
+    <div class="page-grid pointer-events-none fixed inset-0 -z-20"></div>
+    <div class="pointer-events-none fixed left-1/2 top-[-18rem] -z-10 h-[34rem] w-[50rem] -translate-x-1/2 rounded-full bg-cyan/[0.06] blur-3xl"></div>
+
+    <header class="site-shell">
+        <nav class="flex h-20 items-center justify-between border-b border-line/70" aria-label="Primary navigation">
+            <a href="{{ url_for('intro') }}" class="font-mono text-sm font-medium tracking-tight text-white">JT<span class="text-cyan">.</span></a>
+            <div class="flex items-center gap-5 sm:gap-7">
+                <a href="{{ url_for('intro') }}" class="nav-link {% if request.endpoint == 'intro' %}nav-link-active{% endif %}">About</a>
+                <a href="{{ url_for('resume') }}" class="nav-link {% if request.endpoint == 'resume' %}nav-link-active{% endif %}">Experience</a>
+                <a href="{{ url_for('blog') }}" class="nav-link {% if request.endpoint == 'blog' %}nav-link-active{% endif %}">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="site-shell mt-20 border-t border-line/70 py-8">
+        <div class="flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 {{ personal.name }}</p>
+            <p class="font-mono text-xs">Flask · Tailwind CSS · Vercel</p>
         </div>
     </footer>
 </body>
