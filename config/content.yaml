@@ -1,111 +1,115 @@
 personal:
   name: "Jason Tsang"
-  title: "Analyst | Developer"
-  tagline: "Building solutions innovative thinking"
+  title: "Senior Data Analytics Consultant"
+  short_title: "Data Analytics · Engineering"
+  tagline: "I build reliable data pipelines and analytics products that turn complex data into decisions."
+  summary: "Senior consultant with hands-on experience delivering Python models, Azure and Databricks pipelines, compliance analytics, and executive reporting. I work across engineering and business teams to make high-stakes data clear, robust, and useful."
   email: "jasontwk1031@gmail.com"
+  phone: "0413 079 589"
   github: "https://github.com/jasontsang98"
   linkedin: "https://linkedin.com/in/jasontsang123"
-  career_objective: "Aspiring data engineer with hands-on experience in data analytics and engineering tools. 
-    Eager to transition into a data engineering role, leveraging expertise in data modeling, ETL pipelines, 
-    and big data technologies to support business analytics and decisionmaking. 
-    Enthusiastic about creating scalable and efficient data infrastructure to enable data-driven insights"
-skills:
-  programming_data:
-    - name: "Python"
-      level: "Advanced"
-      icon: "fab fa-python"
-    - name: "SQL"
-      level: "Advanced"
-      icon: "fas fa-database"
-    - name: "PySpark"
-      level: "Intermediate"
-      icon: "fas fa-fire"
-    - name: "Databricks"
-      level: "Intermediate"
-      icon: "fas fa-stream"
+  location: "Sydney, Australia"
+  status: "Open to data engineering opportunities"
 
-  data_engineering:
-    - name: "Airflow"
-      level: "Intermediate"
-      icon: "fas fa-project-diagram"
-    - name: "dbt"
-      level: "Intermediate"
-      icon: "fas fa-cubes"
-    - name: "Alteryx"
-      level: "Advanced"
-      icon: "fas fa-random"
+impact:
+  - value: "30%"
+    label: "faster Python execution"
+  - value: "80%"
+    label: "less validation time"
+  - value: "2+"
+    label: "consultants mentored"
 
-  devops:
-    - name: "Azure DevOps"
-      level: "Advanced"
-      icon: "fab fa-microsoft"
-    - name: "Git"
-      level: "Advanced"
-      icon: "fab fa-git-alt"
-    - name: "Docker"
-      level: "Intermediate"
-      icon: "fab fa-docker"
+toolbox:
+  - category: "Languages & frameworks"
+    items: ["Python", "SQL", "PySpark", "dbt"]
+  - category: "Data engineering & cloud"
+    items: ["Azure", "Databricks", "Alteryx", "Airbyte", "Docker", "CI/CD"]
+  - category: "BI & visualisation"
+    items: ["Power BI", "Tableau", "Qlik"]
 
-  systems:
-    - name: "Linux"
-      level: "Intermediate"
-      icon: "fab fa-linux"
-    - name: "Windows"
-      level: "Intermediate"
-      icon: "fab fa-windows"
-
-  visualization:
-    - name: "Power BI"
-      level: "Advanced"
-      icon: "fas fa-chart-bar"
-    - name: "Tableau"
-      level: "Advanced"
-      icon: "fas fa-chart-pie"
-    - name: "Qlik"
-      level: "Advanced"
-      icon: "fas fa-chart-line"
-
-  in_progress:
-    - name: "Airbyte"
-      icon: "fas fa-exchange-alt"
-      level: 1
-    - name: "Azure Cloud"
-      icon: "fas fa-cloud"
-      level: 2
-    - name: "Snowflake"
-      icon: "fas fa-snowflake"
-      level: 1
-    - name: "Machine Learning"
-      icon: "fas fa-robot"
-      level: 0
+capabilities:
+  - number: "01"
+    title: "Data pipelines"
+    description: "Designing automated ingestion, transformation, validation, and delivery workflows across Azure, SQL, and Databricks."
+  - number: "02"
+    title: "Analytics engineering"
+    description: "Building maintainable Python models and reusable validation frameworks for complex, high-stakes datasets."
+  - number: "03"
+    title: "Decision products"
+    description: "Translating model outputs into Power BI and Qlik experiences that help stakeholders act with confidence."
 
 experience:
   - title: "Senior Consultant, Data Analytics"
     company: "PwC Australia"
-    duration: "July 2025 - Present"
+    duration: "2025 — Present"
     location: "Sydney, Australia"
     description:
-      - "1"
-      - "2"
-    technologies: ["Python", "Transact-SQL", "Azure Pipeline", "Alteryx"]
+      - "Refactored a core multiprocessing Python module with modular packaging and process-safe logging, improving execution speed by 30%."
+      - "Translated complex wage-remediation models into executive dashboards supporting assessment against FWO regulations and Enterprise Agreements."
+      - "Acted as the technical liaison between business units and engineering teams to define and deliver data solutions."
+      - "Mentored junior consultants in Python modelling, Alteryx workflow design, code review, and validation standards."
+    technologies: ["Python", "SQL", "Alteryx", "Power BI"]
   - title: "Consultant, Data Analytics"
     company: "PwC Australia"
-    duration: "December 2022 - June 2025"
+    duration: "2022 — 2025"
     location: "Sydney, Australia"
     description:
-      - "1"
-      - "2"
+      - "Architected Azure pipelines integrating SQL input caching and automated multi-scenario validation loops."
+      - "Engineered ETL pipelines with SQL and Databricks to clean and model large historical datasets for compliance reporting."
+      - "Created Python validation frameworks that reduced processing time by 80% while minimising manual reconciliation."
+      - "Designed Power BI and Qlik dashboards that made complex model outputs accessible to corporate stakeholders."
+    technologies: ["Azure", "Databricks", "Python", "T-SQL", "Power BI", "Qlik"]
+  - title: "Group Insurance Analyst"
+    company: "Australian Group Insurance"
+    duration: "Oct — Dec 2022"
+    location: "Sydney, Australia"
+    description:
+      - "Analysed and reconciled client data for accurate premium calculations and policy compliance."
+      - "Performed peer quality-assurance reviews to improve calculation consistency."
+    technologies: ["Data Analysis", "Quality Assurance"]
+
+selected_work:
+  - label: "Performance engineering"
+    title: "Production Python refactor"
+    description: "Reworked a multiprocessing analytics module into a maintainable package with process-safe logging and clearer operational behaviour."
+    outcome: "30% faster execution"
+    technologies: ["Python", "Multiprocessing", "Logging"]
+  - label: "Data platform"
+    title: "Automated compliance pipelines"
+    description: "Built Azure and SQL workflows with cached inputs, repeatable model execution, and multi-scenario validation for large historical datasets."
+    outcome: "80% less validation time"
+    technologies: ["Azure", "SQL", "Databricks", "Python"]
+  - label: "Analytics product"
+    title: "Executive remediation reporting"
+    description: "Turned complex compliance model outputs into interactive dashboards for evaluating obligations and remediation scenarios."
+    outcome: "Decision-ready reporting"
+    technologies: ["Power BI", "Qlik", "Data Modelling"]
 
 projects:
   - name: "Portfolio Website"
-    description: "A responsive Flask-based portfolio website with Tailwind CSS, featuring dynamic content management via YAML configuration and deployment on Vercel."
-    technologies: ["Python", "Flask", "Tailwind CSS", "HTML", "JavaScript"]
+    description: "A content-driven Flask portfolio with Jinja templates, Tailwind CSS, YAML configuration, and Vercel deployment."
+    technologies: ["Python", "Flask", "Tailwind CSS", "Jinja", "YAML"]
     github_url: "https://github.com/jasontsang98/portfolio_website"
 
 education:
-  - degree: "Master of Commerce, Business Analytics"
+  - degree: "Master of Commerce"
+    focus: "Business Analytics & Finance"
     institution: "University of Sydney"
-    graduation: "2020 - 2022"
+    graduation: "2020 — 2022"
+    detail: "High Distinction WAM — 87.5/100"
   - degree: "Bachelor of Actuarial Studies"
+    focus: "Minor in Finance"
     institution: "University of New South Wales"
-    graduation: "2017 - 2020"
+    graduation: "2017 — 2020"
+    detail: ""
+
+additional_experience:
+  - role: "Finance Research Intern"
+    organisation: "Sovereign Wealth Fund Institute"
+    period: "Jan — Mar 2022"
+  - role: "Peer Mentor"
+    organisation: "University of Sydney"
+    period: "Feb — Apr 2022"
+  - role: "Industry Impact Project"
+    organisation: "University of Sydney"
+    period: "Feb 2022"

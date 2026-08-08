@@ -1,193 +1,99 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-8 md:px-16 py-12">
-    <!-- Hero Section -->
-    <div class="text-center mb-12">
-        <div class="mb-6">
-            <!-- Profile Image Row -->
-            <div class="flex justify-center mb-6">
-                <img src="{{ url_for('static', filename='files/profile.png') }}" 
-                     alt="{{ personal.name }}" 
-                     class="rounded-full border-4 border-dev-accent object-cover object-center shadow-lg"
-                     style="width: 12rem; height: 12rem; min-width: 12rem; min-height: 12rem; max-width: 15rem; max-height: 15rem;"
-                     loading="lazy">
-            </div>
-            
-            <!-- Name Row -->
-            <div class="text-center mb-4">
-                <h1 class="text-5xl md:text-6xl font-bold">{{ personal.name }}</h1>
-            </div>
-            
-            <!-- Title Row -->
-            <div class="text-center">
-                <h2 class="text-3xl text-white">{{ personal.title }}</h2>
-            </div>
-        </div>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-6">{{ personal.tagline }}</p>
-        
-        <!-- Contact Links -->
-        <div class="flex justify-center space-x-6">
-            <a href="mailto:{{ personal.email }}" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="{{ personal.github }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="{{ personal.linkedin }}" target="_blank" class="text-2xl text-gray-400 hover:text-dev-accent transition-colors">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
-    
-    <!-- Navigation -->
-    <nav class="mb-12">
-        <div class="flex justify-center space-x-8">
-            <a href="{{ url_for('intro') }}" 
-               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'intro' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
-                About
-            </a>
-            <a href="{{ url_for('resume') }}" 
-               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'resume' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
-                Experience
-            </a>
-            <a href="{{ url_for('blog') }}" 
-               class="px-6 py-3 rounded-lg transition-colors {% if request.endpoint == 'blog' %}bg-dev-accent text-white{% else %}bg-dev-gray text-gray-300 hover:bg-dev-accent hover:text-white{% endif %}">
-                Blog
-            </a>
-        </div>
-    </nav>
-    
-    <!-- Skills Section -->
-    <div class="mb-16">
-        <h3 class="text-3xl font-bold mb-8 text-center">Tech Stack</h3>
-        
-        <!-- Programming and Data -->
-        <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Programming and Data</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.programming_data %}
-                <div class="bg-dev-gray p-4 rounded-lg">
-                    <div class="text-2xl mb-2">
-                        {% if skill.icon.startswith('fa') %}
-                        <i class="{{ skill.icon }}"></i>
-                        {% else %}
-                        {{ skill.icon }}
-                        {% endif %}
-                    </div>
-                    <h5 class="font-semibold">{{ skill.name }}</h5>
-                    <p class="text-gray-400">{{ skill.level }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- Data Engineering and Pipelines -->
-        <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Data Engineering and Pipeline</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.data_engineering %}
-                <div class="bg-dev-gray p-4 rounded-lg">
-                    <div class="text-2xl mb-2">
-                        {% if skill.icon.startswith('fa') %}
-                        <i class="{{ skill.icon }}"></i>
-                        {% else %}
-                        {{ skill.icon }}
-                        {% endif %}
-                    </div>
-                    <h5 class="font-semibold">{{ skill.name }}</h5>
-                    <p class="text-gray-400">{{ skill.level }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- DevOps and Collaboration -->
-        <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">DevOps and Collaboration</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.devops %}
-                <div class="bg-dev-gray p-4 rounded-lg">
-                    <div class="text-2xl mb-2">
-                        {% if skill.icon.startswith('fa') %}
-                        <i class="{{ skill.icon }}"></i>
-                        {% else %}
-                        {{ skill.icon }}
-                        {% endif %}
-                    </div>
-                    <h5 class="font-semibold">{{ skill.name }}</h5>
-                    <p class="text-gray-400">{{ skill.level }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- Systems -->
-        <div class="mb-8">
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">System</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.systems %}
-                <div class="bg-dev-gray p-4 rounded-lg">
-                    <div class="text-2xl mb-2">
-                        {% if skill.icon.startswith('fa') %}
-                        <i class="{{ skill.icon }}"></i>
-                        {% else %}
-                        {{ skill.icon }}
-                        {% endif %}
-                    </div>
-                    <h5 class="font-semibold">{{ skill.name }}</h5>
-                    <p class="text-gray-400">{{ skill.level }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- Data Visualisation -->
+<section class="site-shell pb-16 pt-20 sm:pt-28">
+    <div class="grid gap-12 lg:grid-cols-[1fr_18rem] lg:items-end">
         <div>
-            <h4 class="text-xl font-semibold mb-4 text-dev-accent">Data Visualisation</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for skill in skills.visualization %}
-                <div class="bg-dev-gray p-4 rounded-lg">
-                    <div class="text-2xl mb-2">
-                        {% if skill.icon.startswith('fa') %}
-                        <i class="{{ skill.icon }}"></i>
-                        {% else %}
-                        {{ skill.icon }}
-                        {% endif %}
-                    </div>
-                    <h5 class="font-semibold">{{ skill.name }}</h5>
-                    <p class="text-gray-400">{{ skill.level }}</p>
-                </div>
-                {% endfor %}
+            <p class="eyebrow mb-5">{{ personal.short_title }}</p>
+            <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-6xl">
+                Building reliable paths from <span class="text-slate-500">complex data</span> to decisions.
+            </h1>
+            <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">{{ personal.summary }}</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="{{ url_for('resume') }}" class="button-primary">View experience <span class="ml-2">→</span></a>
+                <a href="{{ url_for('download_resume') }}" class="button-secondary">Download résumé</a>
             </div>
         </div>
-    </div>
-    
-    <!-- In Progress Skills Section -->
-    <div class="mb-16">
-        <h3 class="text-3xl font-bold mb-8 text-center">I'm Currently Developing</h3>
-        <div class="max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {% for skill in skills.in_progress %}
-                <div class="bg-dev-gray p-6 rounded-lg mb-4">
-                    <div class="flex items-center mb-4">
-                        <div class="text-xl mr-6">
-                            {% if skill.icon.startswith('fa') %}
-                            <i class="{{ skill.icon }}"></i>
-                            {% else %}
-                            {{ skill.icon }}
-                            {% endif %}
-                        </div>
-                        <h4 class="text-lg font-semibold">{{ skill.name }}</h4>
-                    </div>
-                    <!-- Progress Bar -->
-                    <div class="progress-container">
-                        <div class="progress-bar progress-level-{{ skill.level }}"></div>
-                    </div>
-                </div>
-                {% endfor %}
+
+        <aside class="surface p-5 shadow-glow">
+            <div class="mb-5 flex items-center gap-2 font-mono text-xs text-success">
+                <span class="h-2 w-2 rounded-full bg-success shadow-[0_0_12px_rgba(52,211,153,.65)]"></span>
+                {{ personal.status }}
             </div>
-        </div>
+            <dl class="space-y-4 text-sm">
+                <div><dt class="text-slate-500">Based in</dt><dd class="mt-1 text-slate-200">{{ personal.location }}</dd></div>
+                <div><dt class="text-slate-500">Currently</dt><dd class="mt-1 text-slate-200">{{ personal.title }} at PwC</dd></div>
+                <div><dt class="text-slate-500">Focus</dt><dd class="mt-1 text-slate-200">Data platforms · Analytics engineering</dd></div>
+            </dl>
+            <div class="mt-6 flex gap-4 border-t border-line pt-4 text-slate-400">
+                <a href="{{ personal.github }}" target="_blank" rel="noreferrer" aria-label="GitHub" class="transition hover:text-white"><i class="fab fa-github"></i></a>
+                <a href="{{ personal.linkedin }}" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="transition hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:{{ personal.email }}" aria-label="Email" class="transition hover:text-white"><i class="fas fa-envelope"></i></a>
+            </div>
+        </aside>
     </div>
-</div>
+</section>
+
+<section class="site-shell py-10">
+    <div class="grid divide-y divide-line border-y border-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        {% for item in impact %}
+        <div class="py-6 sm:px-8 first:sm:pl-0">
+            <p class="font-mono text-3xl font-medium text-white">{{ item.value }}</p>
+            <p class="mt-1 text-sm text-slate-500">{{ item.label }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="site-shell py-16">
+    <div class="mb-8 flex items-end justify-between gap-6">
+        <div><p class="eyebrow mb-3">Selected work</p><h2 class="text-3xl font-semibold tracking-tight">Systems with measurable impact.</h2></div>
+        <a href="{{ url_for('resume') }}" class="hidden text-sm text-slate-400 transition hover:text-white sm:block">Full experience →</a>
+    </div>
+    <div class="grid gap-4">
+        {% for work in selected_work %}
+        <article class="surface group grid gap-5 p-6 transition hover:border-slate-500 sm:grid-cols-[9rem_1fr_auto] sm:items-start sm:p-7">
+            <p class="font-mono text-xs uppercase tracking-wider text-cyan">{{ work.label }}</p>
+            <div>
+                <h3 class="text-xl font-semibold text-white">{{ work.title }}</h3>
+                <p class="mt-2 max-w-2xl leading-7 text-slate-400">{{ work.description }}</p>
+                <div class="mt-4 flex flex-wrap gap-2">{% for tech in work.technologies %}<span class="tag">{{ tech }}</span>{% endfor %}</div>
+            </div>
+            <p class="font-mono text-xs text-success sm:text-right">{{ work.outcome }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="site-shell py-16">
+    <p class="eyebrow mb-3">What I do</p>
+    <h2 class="mb-8 text-3xl font-semibold tracking-tight">From pipeline to decision.</h2>
+    <div class="grid gap-4 md:grid-cols-3">
+        {% for capability in capabilities %}
+        <article class="surface p-6">
+            <p class="font-mono text-xs text-slate-600">{{ capability.number }}</p>
+            <h3 class="mt-10 text-lg font-semibold">{{ capability.title }}</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">{{ capability.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="site-shell py-16">
+    <div class="surface overflow-hidden">
+        {% for group in toolbox %}
+        <div class="grid gap-4 border-b border-line p-6 last:border-0 sm:grid-cols-[14rem_1fr]">
+            <h3 class="text-sm font-medium text-slate-300">{{ group.category }}</h3>
+            <div class="flex flex-wrap gap-2">{% for item in group['items'] %}<span class="tag">{{ item }}</span>{% endfor %}</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="site-shell py-16">
+    <div class="flex flex-col justify-between gap-6 border-t border-line pt-12 sm:flex-row sm:items-end">
+        <div><p class="eyebrow mb-3">Let’s connect</p><h2 class="max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">Interested in reliable data systems and useful analytics.</h2></div>
+        <a href="mailto:{{ personal.email }}" class="button-primary">{{ personal.email }}</a>
+    </div>
+</section>
 {% endblock %}
