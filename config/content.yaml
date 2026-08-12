@@ -2,8 +2,8 @@ personal:
   name: "Jason Tsang"
   title: "Senior Data Analytics Consultant"
   short_title: "Data Analytics · Engineering"
-  tagline: "I build reliable data pipelines and analytics products that turn complex data into decisions."
-  summary: "Senior consultant with hands-on experience delivering Python models, Azure and Databricks pipelines, compliance analytics, and executive reporting. I work across engineering and business teams to make high-stakes data clear, robust, and useful."
+  tagline: "I build practical products and end-to-end data systems that turn ideas into working software."
+  summary: "I work across data engineering, analytics, and web delivery—from cloud ELT pipelines and tested data models to self-hosted applications. I use AI deliberately to accelerate delivery while owning requirements, testing, validation, and outcomes."
   email: "jasontwk1031@gmail.com"
   phone: "0413 079 589"
   github: "https://github.com/jasontsang98"
@@ -12,12 +12,12 @@ personal:
   status: "Open to data engineering opportunities"
 
 impact:
-  - value: "30%"
-    label: "faster Python execution"
-  - value: "80%"
-    label: "less validation time"
-  - value: "2+"
-    label: "consultants mentored"
+  - value: "3+"
+    label: "years in data analytics"
+  - value: "3"
+    label: "projects delivered"
+  - value: "2"
+    label: "end-to-end products"
 
 tech_ticker:
   - name: "Python"
@@ -44,6 +44,30 @@ tech_ticker:
     icon: "fas fa-chart-pie"
   - name: "Qlik"
     icon: "fas fa-chart-line"
+  - name: "Flask"
+    icon: "fas fa-flask"
+  - name: "Jinja"
+    icon: "fas fa-code"
+  - name: "YAML"
+    icon: "fas fa-file-code"
+  - name: "Tailwind CSS"
+    icon: "fas fa-wind"
+  - name: "Vercel"
+    icon: "fas fa-caret-up"
+  - name: "Airflow"
+    icon: "fas fa-diagram-project"
+  - name: "Google Cloud Storage"
+    icon: "fas fa-cloud-arrow-up"
+  - name: "BigQuery"
+    icon: "fas fa-magnifying-glass-chart"
+  - name: "Streamlit"
+    icon: "fas fa-chart-area"
+  - name: "Plotly"
+    icon: "fas fa-chart-line"
+  - name: "Pydantic"
+    icon: "fas fa-shield-halved"
+  - name: "Terraform"
+    icon: "fas fa-cubes-stacked"
 
 toolbox:
   - category: "Languages & frameworks"
@@ -55,14 +79,14 @@ toolbox:
 
 capabilities:
   - number: "01"
-    title: "Data pipelines"
-    description: "Designing automated ingestion, transformation, validation, and delivery workflows across Azure, SQL, and Databricks."
+    title: "Product direction"
+    description: "Turning a practical problem into clear requirements, testable workflows, and an achievable release scope."
   - number: "02"
-    title: "Analytics engineering"
-    description: "Building maintainable Python models and reusable validation frameworks for complex, high-stakes datasets."
+    title: "Data systems"
+    description: "Connecting ingestion, cloud storage, warehouse modelling, orchestration, and dashboards into complete analytical products."
   - number: "03"
-    title: "Decision products"
-    description: "Translating model outputs into Power BI and Qlik experiences that help stakeholders act with confidence."
+    title: "Quality ownership"
+    description: "Testing behaviour, validating data, reviewing AI-assisted output, and checking deployment, recovery, and operational workflows."
 
 experience:
   - title: "Senior Consultant, Data Analytics"
@@ -95,21 +119,24 @@ experience:
     technologies: ["Data Analysis", "Quality Assurance"]
 
 selected_work:
-  - label: "Performance engineering"
-    title: "Production Python refactor"
-    description: "Reworked a multiprocessing analytics module into a maintainable package with process-safe logging and clearer operational behaviour."
-    outcome: "30% faster execution"
-    technologies: ["Python", "Multiprocessing", "Logging"]
-  - label: "Data platform"
-    title: "Automated compliance pipelines"
-    description: "Built Azure and SQL workflows with cached inputs, repeatable model execution, and multi-scenario validation for large historical datasets."
-    outcome: "80% less validation time"
-    technologies: ["Azure", "SQL", "Databricks", "Python"]
-  - label: "Analytics product"
-    title: "Executive remediation reporting"
-    description: "Turned complex compliance model outputs into interactive dashboards for evaluating obligations and remediation scenarios."
-    outcome: "Decision-ready reporting"
-    technologies: ["Power BI", "Qlik", "Data Modelling"]
+  - label: "Data engineering"
+    title: "ApexFlow"
+    description: "An AI-assisted Formula 1 analytics platform that ingests OpenF1 data, orchestrates historical backfills, builds tested BigQuery models, and serves an interactive dashboard. I designed, reviewed, tested, and iterated the flow from ingestion through transformation to delivery."
+    outcome: "ELT → dashboard"
+    technologies: ["Python", "Airflow", "GCS", "BigQuery", "dbt", "Streamlit", "Terraform"]
+    github_url: "https://github.com/jasontsang98/apexflow"
+  - label: "Product delivery"
+    title: "Subtrack Web"
+    description: "A private-by-default, self-hosted subscription manager built with Codex under my product direction. I defined requirements, tested user and recovery workflows, validated releases, and operate the local deployment."
+    outcome: "Directed & tested"
+    technologies: ["Product Direction", "Functional Testing", "Release Validation", "Self-hosting"]
+    github_url: "https://github.com/jasontsang98/subtrack-web"
+  - label: "Web development"
+    title: "Portfolio Website"
+    description: "A content-driven portfolio built with Flask and Jinja, styled with Tailwind CSS, configured through YAML, and deployed on Vercel with responsive and browser-tested layouts."
+    outcome: "Designed & shipped"
+    technologies: ["Python", "Flask", "Jinja", "YAML", "Tailwind CSS", "Vercel"]
+    github_url: "https://github.com/jasontsang98/portfolio_website"
 
 projects:
   - name: "Portfolio Website"
