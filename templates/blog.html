@@ -3,16 +3,26 @@
 {% block title %}Blog — {{ personal.name }}{% endblock %}
 
 {% block content %}
-<section class="site-shell flex min-h-[65vh] items-center py-20">
-    <div class="w-full border-y border-line py-16 text-center sm:py-24">
-        <div class="mx-auto mb-7 flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-panel font-mono text-sm text-cyan">//</div>
+<section class="site-shell py-20 sm:py-24">
+    <div class="max-w-3xl">
         <p class="eyebrow mb-4">Blog</p>
-        <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Notes are in the pipeline.</h1>
-        <p class="mx-auto mt-5 max-w-xl leading-7 text-slate-400">I’m preparing practical writing on data pipelines, analytics engineering, Python, and the lessons behind reliable delivery.</p>
-        <div class="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 font-mono text-xs text-slate-400">
-            <span class="h-2 w-2 animate-pulse rounded-full bg-cyan"></span>
-            Work in progress
-        </div>
+        <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Notes from building practical products.</h1>
+        <p class="mt-5 max-w-2xl leading-7 text-slate-400">Product decisions, data systems, and what I learn while turning everyday problems into working software.</p>
+    </div>
+
+    <div class="mt-14 border-y border-line">
+        <article class="grid gap-8 py-10 md:grid-cols-[11rem_1fr] md:items-start">
+            <div class="font-mono text-xs uppercase tracking-wider text-slate-500">
+                <p>13 Aug 2026</p>
+                <p class="mt-2 text-cyan">Product notes</p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold text-white sm:text-3xl"><a href="{{ url_for('subtrack_blog') }}" class="transition hover:text-cyan">Introducing Subtrack Web</a></h2>
+                <p class="mt-4 max-w-2xl leading-7 text-slate-400">Why I built a private, self-hosted subscription manager—and how it makes recurring spending easier to understand.</p>
+                <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Self-hosting</span><span class="tag">Product direction</span><span class="tag">Subscription management</span></div>
+                <a href="{{ url_for('subtrack_blog') }}" class="mt-7 inline-flex text-sm font-medium text-slate-300 transition hover:text-cyan">Read article <span class="ml-2">→</span></a>
+            </div>
+        </article>
     </div>
 </section>
 {% endblock %}
