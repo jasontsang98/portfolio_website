@@ -6,7 +6,7 @@
         <div>
             <p class="eyebrow mb-5">{{ personal.short_title }}</p>
             <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-white sm:text-6xl">
-                Building reliable paths from <span class="text-slate-500">complex data</span> to decisions.
+                Building practical products and <span class="text-slate-500">end-to-end data systems.</span>
             </h1>
             <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-400">{{ personal.summary }}</p>
             <div class="mt-8 flex flex-wrap gap-3">
@@ -35,19 +35,26 @@
 </section>
 
 <section class="site-shell py-5" aria-label="Technology stack">
-    <div class="tech-marquee overflow-hidden border-y border-line py-5">
-        <div class="tech-marquee-track">
-            {% for duplicate in range(2) %}
-            <div class="tech-marquee-group" {% if duplicate == 1 %}aria-hidden="true"{% endif %}>
-                {% for tech in tech_ticker %}
-                <div class="group flex items-center gap-3 whitespace-nowrap text-slate-500 transition-colors hover:text-white">
-                    <i class="{{ tech.icon }} w-5 text-center text-lg text-slate-400 transition-colors group-hover:text-cyan" aria-hidden="true"></i>
-                    <span class="font-mono text-xs font-medium uppercase tracking-[0.14em]">{{ tech.name }}</span>
+    <div class="divide-y divide-line border-y border-line">
+        {% for ticker in tech_tickers %}
+        <div class="grid gap-3 py-4 md:grid-cols-[12rem_minmax(0,1fr)] md:items-center">
+            <p class="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-cyan">{{ ticker.label }}</p>
+            <div class="tech-marquee overflow-hidden" aria-label="{{ ticker.label }} technologies">
+                <div class="tech-marquee-track{% if ticker.direction == 'right' %} tech-marquee-track-reverse{% endif %}">
+                    {% for duplicate in range(2) %}
+                    <div class="tech-marquee-group" {% if duplicate == 1 %}aria-hidden="true"{% endif %}>
+                        {% for tech in ticker.technologies %}
+                        <div class="group flex items-center gap-3 whitespace-nowrap text-slate-500 transition-colors hover:text-white">
+                            <i class="{{ tech.icon }} w-5 text-center text-lg text-slate-400 transition-colors group-hover:text-cyan" aria-hidden="true"></i>
+                            <span class="font-mono text-xs font-medium uppercase tracking-[0.14em]">{{ tech.name }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </section>
 
@@ -64,8 +71,8 @@
 
 <section class="site-shell py-16">
     <div class="mb-8 flex items-end justify-between gap-6">
-        <div><p class="eyebrow mb-3">Selected work</p><h2 class="text-3xl font-semibold tracking-tight">Systems with measurable impact.</h2></div>
-        <a href="{{ url_for('resume') }}" class="hidden text-sm text-slate-400 transition hover:text-white sm:block">Full experience →</a>
+        <div><p class="eyebrow mb-3">Selected projects</p><h2 class="text-3xl font-semibold tracking-tight">From idea to working product.</h2></div>
+        <a href="{{ personal.github }}" target="_blank" rel="noreferrer" class="hidden text-sm text-slate-400 transition hover:text-white sm:block">More on GitHub ↗</a>
     </div>
     <div class="grid gap-4">
         {% for work in selected_work %}
@@ -75,6 +82,7 @@
                 <h3 class="text-xl font-semibold text-white">{{ work.title }}</h3>
                 <p class="mt-2 max-w-2xl leading-7 text-slate-400">{{ work.description }}</p>
                 <div class="mt-4 flex flex-wrap gap-2">{% for tech in work.technologies %}<span class="tag">{{ tech }}</span>{% endfor %}</div>
+                <a href="{{ work.github_url }}" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center text-sm font-medium text-slate-300 transition hover:text-cyan">View repository <span class="ml-2">↗</span></a>
             </div>
             <p class="font-mono text-xs text-success sm:text-right">{{ work.outcome }}</p>
         </article>
@@ -84,7 +92,7 @@
 
 <section class="site-shell py-16">
     <p class="eyebrow mb-3">What I do</p>
-    <h2 class="mb-8 text-3xl font-semibold tracking-tight">From pipeline to decision.</h2>
+    <h2 class="mb-8 text-3xl font-semibold tracking-tight">How I take work to delivery.</h2>
     <div class="grid gap-4 md:grid-cols-3">
         {% for capability in capabilities %}
         <article class="surface p-6">

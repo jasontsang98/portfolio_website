@@ -33,11 +33,15 @@
 .tech-marquee-track {
   display: flex;
   width: max-content;
-  animation: tech-marquee 38s linear infinite;
+  animation: tech-marquee 64s linear infinite;
 }
 
 .tech-marquee:hover .tech-marquee-track {
   animation-play-state: paused;
+}
+
+.tech-marquee-track-reverse {
+  animation-direction: reverse;
 }
 
 .tech-marquee-group {
@@ -54,7 +58,7 @@
 }
 
 @media (max-width: 640px) {
-  .tech-marquee-track { animation-duration: 48s; }
+  .tech-marquee-track { animation-duration: 76s; }
   .tech-marquee-group { gap: 2rem; padding-right: 2rem; }
 }
 
