@@ -19,55 +19,37 @@ impact:
   - value: "2"
     label: "end-to-end products"
 
-tech_ticker:
-  - name: "Python"
-    icon: "fab fa-python"
-  - name: "SQL"
-    icon: "fas fa-database"
-  - name: "PySpark"
-    icon: "fas fa-fire"
-  - name: "dbt"
-    icon: "fas fa-cubes"
-  - name: "Azure"
-    icon: "fab fa-microsoft"
-  - name: "Databricks"
-    icon: "fas fa-layer-group"
-  - name: "Alteryx"
-    icon: "fas fa-diagram-project"
-  - name: "Airbyte"
-    icon: "fas fa-right-left"
-  - name: "Docker"
-    icon: "fab fa-docker"
-  - name: "Power BI"
-    icon: "fas fa-chart-column"
-  - name: "Tableau"
-    icon: "fas fa-chart-pie"
-  - name: "Qlik"
-    icon: "fas fa-chart-line"
-  - name: "Flask"
-    icon: "fas fa-flask"
-  - name: "Jinja"
-    icon: "fas fa-code"
-  - name: "YAML"
-    icon: "fas fa-file-code"
-  - name: "Tailwind CSS"
-    icon: "fas fa-wind"
-  - name: "Vercel"
-    icon: "fas fa-caret-up"
-  - name: "Airflow"
-    icon: "fas fa-diagram-project"
-  - name: "Google Cloud Storage"
-    icon: "fas fa-cloud-arrow-up"
-  - name: "BigQuery"
-    icon: "fas fa-magnifying-glass-chart"
-  - name: "Streamlit"
-    icon: "fas fa-chart-area"
-  - name: "Plotly"
-    icon: "fas fa-chart-line"
-  - name: "Pydantic"
-    icon: "fas fa-shield-halved"
-  - name: "Terraform"
-    icon: "fas fa-cubes-stacked"
+tech_tickers:
+  - label: "Data & Analytics"
+    direction: "left"
+    technologies:
+      - {name: "Python", icon: "fab fa-python"}
+      - {name: "SQL", icon: "fas fa-database"}
+      - {name: "PySpark", icon: "fas fa-fire"}
+      - {name: "dbt", icon: "fas fa-cubes"}
+      - {name: "Alteryx", icon: "fas fa-diagram-project"}
+      - {name: "Power BI", icon: "fas fa-chart-column"}
+      - {name: "Tableau", icon: "fas fa-chart-pie"}
+      - {name: "Qlik", icon: "fas fa-chart-line"}
+      - {name: "Streamlit", icon: "fas fa-chart-area"}
+      - {name: "Plotly", icon: "fas fa-chart-line"}
+  - label: "Platforms & Engineering"
+    direction: "right"
+    technologies:
+      - {name: "Azure", icon: "fab fa-microsoft"}
+      - {name: "Databricks", icon: "fas fa-layer-group"}
+      - {name: "Airbyte", icon: "fas fa-right-left"}
+      - {name: "Airflow", icon: "fas fa-diagram-project"}
+      - {name: "Google Cloud Storage", icon: "fas fa-cloud-arrow-up"}
+      - {name: "BigQuery", icon: "fas fa-magnifying-glass-chart"}
+      - {name: "Docker", icon: "fab fa-docker"}
+      - {name: "Flask", icon: "fas fa-flask"}
+      - {name: "Jinja", icon: "fas fa-code"}
+      - {name: "YAML", icon: "fas fa-file-code"}
+      - {name: "Tailwind CSS", icon: "fas fa-wind"}
+      - {name: "Pydantic", icon: "fas fa-shield-halved"}
+      - {name: "Terraform", icon: "fas fa-cubes-stacked"}
+      - {name: "Vercel", icon: "fas fa-caret-up"}
 
 toolbox:
   - category: "Languages & frameworks"

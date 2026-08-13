@@ -40,6 +40,10 @@
   animation-play-state: paused;
 }
 
+.tech-marquee-track-reverse {
+  animation-direction: reverse;
+}
+
 .tech-marquee-group {
   display: flex;
   flex-shrink: 0;

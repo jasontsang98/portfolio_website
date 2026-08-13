@@ -35,19 +35,26 @@
 </section>
 
 <section class="site-shell py-5" aria-label="Technology stack">
-    <div class="tech-marquee overflow-hidden border-y border-line py-5">
-        <div class="tech-marquee-track">
-            {% for duplicate in range(2) %}
-            <div class="tech-marquee-group" {% if duplicate == 1 %}aria-hidden="true"{% endif %}>
-                {% for tech in tech_ticker %}
-                <div class="group flex items-center gap-3 whitespace-nowrap text-slate-500 transition-colors hover:text-white">
-                    <i class="{{ tech.icon }} w-5 text-center text-lg text-slate-400 transition-colors group-hover:text-cyan" aria-hidden="true"></i>
-                    <span class="font-mono text-xs font-medium uppercase tracking-[0.14em]">{{ tech.name }}</span>
+    <div class="divide-y divide-line border-y border-line">
+        {% for ticker in tech_tickers %}
+        <div class="grid gap-3 py-4 md:grid-cols-[12rem_minmax(0,1fr)] md:items-center">
+            <p class="font-mono text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-cyan">{{ ticker.label }}</p>
+            <div class="tech-marquee overflow-hidden" aria-label="{{ ticker.label }} technologies">
+                <div class="tech-marquee-track{% if ticker.direction == 'right' %} tech-marquee-track-reverse{% endif %}">
+                    {% for duplicate in range(2) %}
+                    <div class="tech-marquee-group" {% if duplicate == 1 %}aria-hidden="true"{% endif %}>
+                        {% for tech in ticker.technologies %}
+                        <div class="group flex items-center gap-3 whitespace-nowrap text-slate-500 transition-colors hover:text-white">
+                            <i class="{{ tech.icon }} w-5 text-center text-lg text-slate-400 transition-colors group-hover:text-cyan" aria-hidden="true"></i>
+                            <span class="font-mono text-xs font-medium uppercase tracking-[0.14em]">{{ tech.name }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </section>
 
