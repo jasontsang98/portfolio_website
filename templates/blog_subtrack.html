@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Introducing Subtrack Web — {{ personal.name }}{% endblock %}
+
+{% block content %}
+<article class="site-shell py-16 sm:py-24">
+    <header class="mx-auto max-w-3xl border-b border-line pb-12">
+        <a href="{{ url_for('blog') }}" class="font-mono text-xs uppercase tracking-wider text-slate-500 transition hover:text-cyan">← Back to blog</a>
+        <p class="eyebrow mt-10">Product notes · 13 Aug 2026</p>
+        <h1 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-6xl">Introducing Subtrack Web</h1>
+        <p class="mt-6 text-lg leading-8 text-slate-400">A private, self-hosted way to track recurring payments and understand what subscriptions really cost each month.</p>
+        <div class="mt-7 flex flex-wrap gap-2"><span class="tag">Self-hosting</span><span class="tag">Product direction</span><span class="tag">Subscription management</span></div>
+    </header>
+
+    <div class="article-body mx-auto max-w-3xl py-12 text-slate-300">
+        <section>
+            <p class="eyebrow">The problem</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Why I built it</h2>
+            <p class="mt-5 leading-8">I built Subtrack Web because I struggled to keep track of how much I was spending on subscriptions every month. Payments renewed on different schedules, annual plans were easy to forget, and looking through bank transactions never gave me a simple view of the true monthly cost.</p>
+            <p class="mt-5 leading-8">I wanted one private place where I could record recurring payments, compare monthly and annual spending, and spot subscriptions I no longer needed.</p>
+        </section>
+
+        <section class="mt-14 border-t border-line pt-12">
+            <p class="eyebrow">The product</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">What Subtrack Web does</h2>
+            <p class="mt-5 leading-8">Subtrack Web is a single-user subscription manager that runs on your own machine or private server. Your subscription data stays in your PostgreSQL database instead of being sent to a hosted Subtrack service.</p>
+            <div class="mt-7 grid gap-4 sm:grid-cols-2">
+                <div class="surface p-5"><h3 class="font-semibold text-white">Track recurring payments</h3><p class="mt-2 text-sm leading-6 text-slate-400">Manage active and inactive subscriptions across weekly, fortnightly, monthly, and yearly billing cycles.</p></div>
+                <div class="surface p-5"><h3 class="font-semibold text-white">Understand spending</h3><p class="mt-2 text-sm leading-6 text-slate-400">See annual, monthly, and seven-day summaries, plus historical trends and category insights.</p></div>
+                <div class="surface p-5"><h3 class="font-semibold text-white">Remember renewals</h3><p class="mt-2 text-sm leading-6 text-slate-400">Configure a weekly email digest and test reminders locally through Mailpit.</p></div>
+                <div class="surface p-5"><h3 class="font-semibold text-white">Keep portable backups</h3><p class="mt-2 text-sm leading-6 text-slate-400">Create scheduled or manual database backups, with JSON export and import when you need portability.</p></div>
+            </div>
+        </section>
+
+        <section class="mt-14 border-t border-line pt-12">
+            <p class="eyebrow">Everyday use</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">A typical workflow</h2>
+            <ol class="mt-7 space-y-6">
+                <li class="grid grid-cols-[2.5rem_1fr] gap-3"><span class="font-mono text-sm text-cyan">01</span><div><h3 class="font-semibold text-white">Add your subscriptions</h3><p class="mt-2 leading-7 text-slate-400">Record the price, billing cycle, category, and renewal details for each recurring payment.</p></div></li>
+                <li class="grid grid-cols-[2.5rem_1fr] gap-3"><span class="font-mono text-sm text-cyan">02</span><div><h3 class="font-semibold text-white">Review the totals</h3><p class="mt-2 leading-7 text-slate-400">Use the spending summaries to understand the combined monthly and annual impact—even when services bill on different schedules.</p></div></li>
+                <li class="grid grid-cols-[2.5rem_1fr] gap-3"><span class="font-mono text-sm text-cyan">03</span><div><h3 class="font-semibold text-white">Look for waste</h3><p class="mt-2 leading-7 text-slate-400">Search, sort, and compare categories to find services that are duplicated, underused, or no longer worth renewing.</p></div></li>
+                <li class="grid grid-cols-[2.5rem_1fr] gap-3"><span class="font-mono text-sm text-cyan">04</span><div><h3 class="font-semibold text-white">Protect the data</h3><p class="mt-2 leading-7 text-slate-400">Use the built-in backup workflow and copy important archives to another device or encrypted storage.</p></div></li>
+            </ol>
+        </section>
+
+        <section class="mt-14 border-t border-line pt-12">
+            <p class="eyebrow">Getting started</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Run it locally with Docker</h2>
+            <p class="mt-5 leading-8">The quickest setup is Docker Compose. Clone the repository, copy the example environment file, set a strong admin password and database credentials, generate an authentication secret, then start the containers.</p>
+            <pre class="mt-7 overflow-x-auto rounded-xl border border-line bg-black/30 p-5 text-sm leading-7 text-slate-300"><code>git clone https://github.com/jasontsang98/subtrack-web.git
+cd subtrack-web
+cp .env.example .env
+# Configure AUTH_PASSWORD and PostgreSQL passwords
+# Generate AUTH_SECRET with: openssl rand -hex 32
+docker compose pull
+docker compose up -d</code></pre>
+            <p class="mt-5 leading-8">Open <code class="font-mono text-cyan">http://localhost:3000</code> for Subtrack and <code class="font-mono text-cyan">http://localhost:8025</code> for the local Mailpit inbox. The repository documentation covers upgrades, restore procedures, and more secure network deployment.</p>
+        </section>
+
+        <section class="mt-14 border-t border-line pt-12">
+            <p class="eyebrow">A note on ownership</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">AI-assisted implementation, human-directed product</h2>
+            <p class="mt-5 leading-8">Subtrack Web was implemented with Codex under my product direction. I defined the problem and requirements, tested the user experience and recovery workflows, reviewed behaviour, validated releases, and operate the self-hosted deployment. I treat AI as a delivery tool—not as a substitute for ownership or verification.</p>
+        </section>
+
+        <aside class="mt-14 surface p-7 sm:p-8">
+            <p class="font-mono text-xs uppercase tracking-wider text-cyan">Explore the project</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Read the full setup and security documentation</h2>
+            <p class="mt-4 leading-7 text-slate-400">The GitHub repository contains the latest quick start, deployment guide, backup and restore instructions, roadmap, and source code.</p>
+            <a href="https://github.com/jasontsang98/subtrack-web" target="_blank" rel="noreferrer" class="button-primary mt-6">View Subtrack Web on GitHub ↗</a>
+        </aside>
+    </div>
+</article>
+{% endblock %}

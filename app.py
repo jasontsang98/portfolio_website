@@ -23,6 +23,11 @@ def blog():
     config = load_config()
     return render_template('blog.html', **config)
 
+@app.route('/blog/subtrack-web')
+def subtrack_blog():
+    config = load_config()
+    return render_template('blog_subtrack.html', **config)
+
 @app.route('/download-resume')
 def download_resume():
     return send_file('static/files/resume.pdf', as_attachment=True)
